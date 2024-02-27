@@ -1,20 +1,19 @@
+import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import TabNavigation from './Apps/Navigations/TabNavigation';
+import registerNNPushToken from 'native-notify';
 
 export default function App() {
+  registerNNPushToken(19832, '9ELUhQ8IMKpRpgMBsQiv1L');
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View className="flex-1">
+
+      <NavigationContainer>
+        <TabNavigation />
+      </NavigationContainer>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
